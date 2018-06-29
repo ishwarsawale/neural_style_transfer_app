@@ -1,3 +1,4 @@
+#!/usr/bin python3
 from kivy.app import App
 from imagemix import imagemixController
 

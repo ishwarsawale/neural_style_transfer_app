@@ -16,6 +16,11 @@ sudo apt-get install -t jessie-backports libwayland-egl1-mesa
   ```
   - python setup.py build_ext --inplace -f
 
+Machine Learning
+  - Python 3.6
+  - Install requirment.txt
+
+
 ## Neural Network Setup
 - To Do
 
