@@ -1,0 +1,93 @@
+#:kivy 1.10.0
+
+<ConfigScreen>:
+	name: 'config_screen'
+	use_faster_graph: _use_faster_graph
+	ActionBar:
+		top: root.height
+		ActionView:
+			use_separator: True
+			ActionPrevious:
+				title: 'StyleApp'
+				on_release: root.parent.current = 'output_screen'
+	RelativeLayout:
+		size_hint: (.9, .95)
+		pos_hint: {'right': .9, 'top': .95}
+		RelativeLayout:
+			size_hint: (.9, .9)
+			pos_hint: {'x' : .1, 'top' : 1}
+			GridLayout:
+				cols: 2
+				padding: 50
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Width (in pixels)'
+					Label:
+						text: 'Height (in pixels)'
+					Label:
+						text: 'Use Meta Image'
+					Label:
+						text: 'Save Meta Iamge'
+					Label:
+						text: 'Use L-BFGS'
+					Label:
+						text: 'Iterations per Image'
+					Label:
+						text: 'Noise Ratio [0, 1]'
+					Label:
+						text: 'Content Emphasis'
+					Label:
+						text: 'Style Emphasis'
+					Label:
+						text: 'Smoothening'
+					Label:
+						text: 'Faster mode'
+				BoxLayout:
+					orientation: 'vertical'
+					TextInput:
+						id: _width
+						text: '256'
+					TextInput:
+						id: _height
+						text: '256'
+					CheckBox:
+						id: _use_meta
+						active: False
+					CheckBox:
+						id: _save_meta
+						active: True
+					CheckBox:
+						id: _use_lbfgs
+						active: True
+					TextInput:
+						id: _max_iterations
+						text: '20'
+					TextInput:
+						id: _noise_ratio
+						text: '1.0'
+					TextInput:
+						id: _alpha
+						text: '500'
+					TextInput:
+						id: _beta
+						text: '100'
+					TextInput:
+						id: _gamma
+						text: '10'
+					CheckBox:
+						id: _use_faster_graph
+						active: True
+	RelativeLayout:
+		size_hint: (.2, .1)
+		pos_hint: {'x': .22, 'y': .05}
+		Button:
+			text: 'Configure'
+			on_press: root.parent.set_config_screen()
+	RelativeLayout:
+		size_hint: (.2, .1)
+		pos_hint: {'x': .57, 'y': .05}
+		Button:
+			text: 'Start'
+			on_press: root.parent.current = 'output_screen'; root.parent.start_button(_width.text, _height.text, _use_meta.active, _save_meta.active, _use_lbfgs.active, _max_iterations.text, _noise_ratio.text, _alpha.text, _beta.text, _gamma.text, _use_faster_graph.active);
+
