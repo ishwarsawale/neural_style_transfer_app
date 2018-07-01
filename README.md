@@ -21,8 +21,36 @@ Machine Learning
   - Install requirment.txt
 
 
-## Neural Network Setup
-- To Do
+## How to Start App
+- Run script get_vgg_model.sh [This will download two VGG models]
+- Copy Content Image & Style Image in images directory
+- Run main.py
+
+## App Demo
+
+First Screen
+![First Screen](support_images/imag_1.png)
+
+Select Content Fil3
+![First Screen](support_images/imag_2.png)
+
+Select Style File
+![First Screen](support_images/imag_3.png)
+
+Click on train & Select Params
+![First Screen](support_images/imag_4.png)
+
+Configure which Layers to Select
+![First Screen](support_images/imag_5.png)
+
+Initial Run Generates Noise
+![First Screen](support_images/imag_6.png)
+
+After Some Time (Like after 25 Epoches)
+![First Screen](support_images/imag_7.png)
+
+## Some Samples
+![alt-text-1](support_images/st_2.png) ![alt-text-2](support_images/st_1.png)
 
 
 License
